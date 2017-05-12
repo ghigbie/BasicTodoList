@@ -5,12 +5,19 @@ const ulEl = document.querySelector("ul");
 buttonEl.addEventListener("click", addTodo);
 
 function addTodo(){
-	var userInput = inputEl.value;
+	let userInput = inputEl.value;
 	console.log(userInput);
 	if(userInput.trim() == ""){
 		return;
 	}
-	var todoLi = document.createElement("li");
-	todoLi.innerHTML = userInput;
+	let todoLi = document.createElement("li");
+	todoLi.textContent = userInput;
+	todoLi.addEventListener("click", removeTodo);
 	ulEl.appendChild(todoLi);
+	inputEl.value = "";
+}
+
+function removeTodo(event){
+	var clickedLi = event.target;
+	clickedLi.parentNode.removeChild(clickedLi);
 }

@@ -2,13 +2,15 @@ const inputEl = document.querySelector("input");
 const buttonEl = document.querySelector("button");
 const ulEl = document.querySelector("ul");
 
-buttonEl.addEventListener("click", addTodo());
+buttonEl.addEventListener("click", addTodo);
 
-addTodo = () => {
-	let userInput = input.El.value;
+function addTodo(){
+	var userInput = inputEl.value;
+	console.log(userInput);
 	if(userInput.trim() == ""){
 		return;
 	}
-	let todoLi = document.createElement("li");
-	ulEl.appendChild("todoLi");
+	var todoLi = document.createElement("li");
+	todoLi.innerHTML = userInput;
+	ulEl.appendChild(todoLi);
 }

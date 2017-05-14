@@ -1,6 +1,6 @@
-const inputEl = document.querySelector("input");
-const buttonEl = document.querySelector("button");
-const ulEl = document.querySelector("ul");
+const inputEl = $("input");
+const buttonEl = $("button");
+const ulEl = $("ul");
 let todos = [];
 
 buttonEl.addEventListener("click", addTodo);

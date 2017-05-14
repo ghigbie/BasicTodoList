@@ -6,7 +6,7 @@ let todos = [];
 buttonEl.addEventListener("click", addTodo);
 
 function addTodo(){
-	let userInput = inputEl.value;
+	let userInput = inputEl.val();
 	console.log(userInput);
 	if(userInput.trim() == ""){
 		return;
@@ -14,9 +14,9 @@ function addTodo(){
 	let newTodo = {id: Math.random(), value: userInput};
 	todos.push(newTodo);
 	console.log(todos);
-	let todoLi = document.createElement("li");
+	$("<li> + userInput + </li>").appendTo(ulEl);
 	todoLi.textContent = userInput;
-	todoLi.addEventListener("click", removeTodo);
+	todoLi.click(removeTodo);
 	todoLi.dataset.id = newTodo.id;
 	ulEl.appendChild(todoLi);
 	inputEl.value = "";
